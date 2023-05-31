@@ -1,0 +1,3 @@
+name: crt
+depend: standard-library music-tools
+include: agda
