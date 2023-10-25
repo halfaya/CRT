@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[]{amsmath}
+\usepackage[]{amsthm}
+\usepackage[]{amssymb}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+
+\newtheorem*{theorem}{Theorem}
+
+\title{Chinese Remainder Theorem}
+\author{John Leo}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Instrumentation}
+
+\begin{enumerate}
+\item Xiaoluo [small gong] (30 bar phrases)
+\item Paigu [drums] (7 bar phrases)
+\item Yanqin (5 bar phrase)
+\item Plucked Strings (3 bar phrases)
+  \begin{enumerate}
+  \item Zhongruan
+  \item Pipa
+  \end{enumerate}
+\item Bowed Strings (2 bar phrases)
+  \begin{enumerate}
+  \item Erhu
+  \item Zhonghu
+  \end{enumerate}
+\end{enumerate}
+
+\section{Musical Structure}
+
+\begin{itemize}
+\item There are $2\cdot 3\cdot 5\cdot 7 = 210$ bars of music.
+
+\item Tempo is 120 bpm. 4/4 time, so 840 beats and exactly 7 minutes of music.
+Divide into 7 one-minute sections of 30 bars of music.
+
+\item Key is G major.
+
+\item All instruments play only scale tones.
+
+\begin{itemize}
+\item Yangqin plays the pentatonic scale omitting 4 and 7 (G, A, B, D, E).
+\linebreak(Major Pentatonic: 
+\href{https://ianring.com/musictheory/scales/661}{https://ianring.com/musictheory/scales/661})
+
+\item All other strings play a hexatonic scale omitting only 4 (G, A, B, D,
+E, F\#). \linebreak(Raga Kumud:
+\href{https://ianring.com/musictheory/scales/2709}{https://ianring.com/musictheory/scales/2709})
+\end{itemize}
+\end{itemize}
+
+\section{Chinese Remainder Theorem}
+
+\begin{theorem}[Chinese Remainder Theorem]
+  Let $I_1,\ldots,I_N$ be pairwise comaximal ideals of commutative
+  ring $R$ ($I_i+I_j = R$ for all $i\ne j$). Then there is a ring
+  isomorphism $R / (\cap_k I_k) \simeq \prod_k (R / I_k)$. In
+  particular if $n_k \in \mathbb{Z}$ are pairwise coprime then
+  $\mathbb{Z} / [(\prod_k n_k)\mathbb{Z}] \simeq \prod_k (\mathbb{Z} /
+  n_k\mathbb{Z})$.
+\end{theorem}
+
+\begin{proof}[Proof Outline]
+  The primary source for the proof is Serge Lang, \textit{Algebra,
+    Revised Third Edition} (2002), pages 94-95.
+  \begin{enumerate}
+    \item Bézout’s Lemma: Coprime implies comaximal. If $(m,n) = 1$.
+      then $\exists a,b \text{ s.t. } 1 = am + bn$.
+    \item Surjectivity. Base case $n=2$. Given $(c,d) \in \mathbb{Z} /
+      m\mathbb{Z} \times \mathbb{Z} / n\mathbb{Z}$, let $x =dam + cbn$.
+    \item Check that $x \equiv c \bmod m$ and $x \equiv d \bmod n$.
+    \item Induction: For all $k$, $n_k\mathbb{Z}$ is comaximal to the
+      product of the other $n_i\mathbb{Z}$: $n_1\mathbb{Z} + \prod_{i
+        \ne k}n_k\mathbb{Z} = \mathbb{Z}$.
+    \item By the theorem with $n=2$, for all $k$ we can find $y_k$
+      satisfying $y_k \equiv 1 \bmod n_k$, $y_k \equiv 0 \bmod \prod_{i\ne
+        k}n_i$.
+    \item Then given $(x_1,\ldots,x_N) \in \prod_k (\mathbb{Z} /
+      nk\mathbb{Z})$ , $\sum_k x_ky_k$ maps to $(x_1,\ldots,x_N)$.
+    \item Injectivity. The kernel of the homomorphism is
+      $(\prod_k n_k)\mathbb{Z}$.
+  \end{enumerate}
+\end{proof}
+
+\end{document}
