@@ -48,11 +48,13 @@ Divide into 7 one-minute sections of 30 bars of music.
 
 \begin{itemize}
 \item Yangqin plays the pentatonic scale omitting 4 and 7 (G, A, B, D, E).
-\linebreak(Major Pentatonic: 
+  \\
+  (Major Pentatonic: 
 \href{https://ianring.com/musictheory/scales/661}{https://ianring.com/musictheory/scales/661})
 
 \item All other strings play a hexatonic scale omitting only 4 (G, A, B, D,
-E, F\#). \linebreak(Raga Kumud:
+  E, F\#). \\
+  (Raga Kumud:
 \href{https://ianring.com/musictheory/scales/2709}{https://ianring.com/musictheory/scales/2709})
 \end{itemize}
 \end{itemize}
@@ -72,7 +74,7 @@ E, F\#). \linebreak(Raga Kumud:
   The primary source for the proof is Serge Lang, \textit{Algebra,
     Revised Third Edition} (2002), pages 94-95.
   \begin{enumerate}
-    \item Bézout’s Lemma: Coprime implies comaximal. If $(m,n) = 1$.
+    \item Bézout’s Lemma: Coprime implies comaximal. If $(m,n) = 1$,
       then $\exists a,b \text{ s.t. } 1 = am + bn$.
     \item Surjectivity. Base case $n=2$. Given $(c,d) \in \mathbb{Z} /
       m\mathbb{Z} \times \mathbb{Z} / n\mathbb{Z}$, let $x =dam + cbn$.
@@ -89,5 +91,40 @@ E, F\#). \linebreak(Raga Kumud:
       $(\prod_k n_k)\mathbb{Z}$.
   \end{enumerate}
 \end{proof}
+
+\section{Musical Realization}
+
+Xiaoluo introduces each 30 bar section, counting the section
+number. Paigu plays patterns changing every 7 bars so that the full
+cycle is completed in 210 bars. Each section is described below.
+
+\begin{enumerate}
+
+\item Bézout’s Lemma
+  (\href{https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/EuclideanDomain/Basic.html#EuclideanDomain.gcd_eq_gcd_ab}{EuclideanDomain.gcd\_eq\_gcd\_ab})
+  is illustrated by the special case $m = 2, n = 3$ following
+  the extended Euclidean algorithm
+  (\href{https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/EuclideanDomain/Defs.html#EuclideanDomain.xgcd}{EuclideanDomain.xgcd}).
+Erhu/Zhonghu represent
+2, Pipa/Zhongruan represent 3, and Yangqin does additional work. The
+sequence (following
+\href{https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/EuclideanDomain/Defs.html#EuclideanDomain.xgcdAux}{EuclideanDomain.xgcdAux}) is:
+
+\begin{enumerate}
+\item $2 = 1\cdot 2 + 0\cdot 3$
+\item $3 = 0\cdot 2 + 1\cdot 3$
+\item $2 = 1\cdot 2 + 0\cdot 3$
+\item $1 = (-1)\cdot 2 + 1\cdot 3$
+\end{enumerate}
+
+\item Given (1,2), 
+
+\item 3
+\item 4
+\item 5
+\item 6
+\item 7
+
+\end{enumerate}
 
 \end{document}
