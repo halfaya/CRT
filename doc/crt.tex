@@ -89,10 +89,11 @@ Divide into 7 one-minute sections of 30 bars of music.
       satisfying $y_k \equiv 1 \bmod n_k$, $y_k \equiv 0 \bmod \prod_{i\ne
         k}n_i$.
     \item Then given $(x_1,\ldots,x_N) \in \prod_k (\mathbb{Z} /
-      nk\mathbb{Z})$ , $\sum_k x_ky_k$ maps to $(x_1,\ldots,x_N)$.
-    \item Injectivity. The kernel of the homomorphism is
-      $(\prod_k n_k)\mathbb{Z}$.
-    \item Todo
+      n_k\mathbb{Z})$, $\sum_k x_ky_k$ maps to $(x_1,\ldots,x_N)$.
+    \item The map $f : \mathbb{Z} \to \prod_k (\mathbb{Z} /
+      n_k\mathbb{Z})$ defined by $f(x) = \prod_k (x \bmod n_k)$ is a
+      (surjective) ring homomorphism.
+    \item The kernel of $f$ is $(\prod_k n_k)\mathbb{Z}$.
   \end{enumerate}
 \end{proof}
 
